@@ -10,6 +10,7 @@ module.exports = {
     getAll,
     create,
     deleteOne,
+    getOne,
 };
 
 function getAll() {
@@ -25,4 +26,9 @@ function deleteOne(id) {
     id = parseInt(id)
     const idx = skills.findIndex(skill => skill.id === id)
     skills.splice(idx, 1)
+}
+
+function getOne(id) {
+    id = parseInt(id)
+    return skills.find((skill) => skill.id === id)
   }
